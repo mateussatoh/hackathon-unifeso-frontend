@@ -14,7 +14,7 @@ function AppRoutes() {
         <Route path="/login" element={<CredentialForm type="LOGIN" />} />
         <Route path="/create-password" element={<CredentialForm type="CREATE-PASSWORD"/>} />
         <Route path="/forgot-password" element={<CredentialForm type="FORGOT-PASSWORD"/>} />
-        <Route path="/dashboard" element={<Dashboard view={"ALUNO"} />} />
+        <Route path="/dashboard" element={<Dashboard view={"ADMIN"} />} />
 
       </Routes>
   );
