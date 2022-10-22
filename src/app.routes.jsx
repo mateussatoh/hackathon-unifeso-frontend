@@ -12,9 +12,10 @@ function AppRoutes() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<CredentialForm type="LOGIN" />} />
-        <Route path="/create-password" element={<CredentialForm type="CREATE-PASSWORD"/>} />
-        <Route path="/forgot-password" element={<CredentialForm type="FORGOT-PASSWORD"/>} />
-        <Route path="/dashboard" element={<Dashboard view={"ALUNO"} />} />
+        <Route path="/criar-conta" element={<CredentialForm type="CREATE-USER"/>} />
+        <Route path="/criar-senha" element={<CredentialForm type="CREATE-PASSWORD"/>} />
+        <Route path="/esqueci-minha-senha" element={<CredentialForm type="FORGOT-PASSWORD"/>} />
+        <Route path="/dashboard" element={<CredentialForm />} />
 
       </Routes>
   );
