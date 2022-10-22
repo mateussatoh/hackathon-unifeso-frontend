@@ -6,12 +6,22 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
 import Link from '@mui/material/Link';
 
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import TableCell from '@mui/material/TableCell';
+
+import EditIcon from '@mui/icons-material/Edit';
+
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
+
+
+
 
 function Copyright(props) {
     return (
@@ -26,8 +36,7 @@ function Copyright(props) {
     );
   }
   
-
-function DashboardAdminView() {
+function DashboardAdminView() {  
     return(
         <Box
         component="main"
@@ -44,48 +53,124 @@ function DashboardAdminView() {
         <Toolbar />
         
         <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-          <Grid container spacing={3}>
-            <Grid item xs={6} md={6} lg={6}>
-              <Paper
-                sx={{
-                  p: 2,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  height: "auto",
-                }}
-              >
- 
- 
-              </Paper>
-            </Grid>
-       
-            <Grid item xs={6} md={6} lg={6}>
-              <Paper
-                sx={{
-                  p: 2,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  height: "auto",
-                }}
-              >
-         
-              </Paper>
+          <Grid container spacing={1}>
+      
+            <Grid item xs={6} md={6} lg={6}> 
+            <TableContainer component={Paper} sx={{ height: 400, width: '100%' }} >
+              <Table  aria-label="customized table">
+                <TableHead>
+                  <TableRow>
+                    <TableCell align="left">Calories</TableCell>
+                    <TableCell align="left">Fat&nbsp;(g)</TableCell>
+                    <TableCell align="right">Ações</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                    <TableRow key={1}>
+                      <TableCell align="left"> A</TableCell>
+                      <TableCell align="left">A</TableCell>
+                      <TableCell align="right">
+                      <IconButton aria-label="delete">
+                      <EditIcon />
+                      </IconButton>
+                      <IconButton aria-label="delete">
+                        <DeleteIcon />
+                      </IconButton>
+                      </TableCell>
+                    </TableRow>
+                </TableBody>
+              </Table>
+            </TableContainer>
             </Grid>
 
-            
-            <Grid item xs={6} md={6} lg={6}>
-              <Paper
-                sx={{
-                  p: 2,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  height: "auto",
-                }}
-              >
-         
-              </Paper>
+            <Grid item xs={6} md={6} lg={6}> 
+            <TableContainer component={Paper} sx={{ height: 400, width: '100%' }} >
+              <Table  aria-label="customized table">
+                <TableHead>
+                  <TableRow>
+                    <TableCell align="left">Calories</TableCell>
+                    <TableCell align="left">Fat&nbsp;(g)</TableCell>
+                    <TableCell align="right">Ações</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                    <TableRow key={1}>
+                      <TableCell align="left"> A</TableCell>
+                      <TableCell align="left">A</TableCell>
+                      <TableCell align="right">
+                      <IconButton aria-label="delete">
+                      <EditIcon />
+                      </IconButton>
+                      <IconButton aria-label="delete">
+                        <DeleteIcon />
+                      </IconButton>
+                      </TableCell>
+                    </TableRow>
+                </TableBody>
+              </Table>
+            </TableContainer>
             </Grid>
-            
+
+
+            <Grid item xs={6} md={6} lg={6}> 
+            <TableContainer component={Paper} sx={{ height: 400, width: '100%' }} >
+              <Table  aria-label="customized table">
+                <TableHead>
+                  <TableRow>
+                    <TableCell align="left">Calories</TableCell>
+                    <TableCell align="left">Fat&nbsp;(g)</TableCell>
+                    <TableCell align="right">Ações</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                    <TableRow key={1}>
+                      <TableCell align="left"> A</TableCell>
+                      <TableCell align="left">A</TableCell>
+                      <TableCell align="right">
+                      <IconButton aria-label="delete">
+                      <EditIcon />
+                      </IconButton>
+                      <IconButton aria-label="delete">
+                        <DeleteIcon />
+                      </IconButton>
+                      </TableCell>
+                    </TableRow>
+                </TableBody>
+              </Table>
+            </TableContainer>
+            </Grid>
+
+
+            <Grid item xs={6} md={6} lg={6}> 
+            <TableContainer component={Paper} sx={{ height: 400, width: '100%' }} >
+              <Table  aria-label="customized table">
+                <TableHead>
+                  <TableRow>
+                    <TableCell align="left">Calories</TableCell>
+                    <TableCell align="left">Fat&nbsp;(g)</TableCell>
+                    <TableCell align="right">Ações</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                    <TableRow key={1}>
+                      <TableCell align="left"> A</TableCell>
+                      <TableCell align="left">A</TableCell>
+                      <TableCell align="right">
+                      <IconButton aria-label="delete">
+                      <EditIcon />
+                      </IconButton>
+                      <IconButton aria-label="delete">
+                        <DeleteIcon />
+                      </IconButton>
+                      </TableCell>
+                    </TableRow>
+                </TableBody>
+              </Table>
+            </TableContainer>
+            </Grid>
+
+
+        
           </Grid>
           <Copyright sx={{ pt: 4 }} />
         </Container>
