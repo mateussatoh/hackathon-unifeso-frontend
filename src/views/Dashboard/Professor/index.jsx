@@ -28,7 +28,8 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
 import Modal from "@mui/material/Modal";
-import { CreateAula } from "../../../service/aula";
+import { CreateAula, ListAllAulas } from "../../../service/aula";
+import { useEffect } from "react";
 
 function Copyright(props) {
   return (
@@ -58,8 +59,19 @@ function DashboardProfessorView() {
   const [classDate , setClassDate] = useState("")
   const [className , setClassName] = useState("")
 
+  const [aulas, setAulas] =  useState([])
 
-  
+
+  useEffect(() => {
+    async function fetch() {
+      const aulas = await ListAllAulas()
+      setAulas(aulas)
+    }
+
+     fetch()
+    
+    
+  }, [])
 
   function closeAllModals() {
     setIsCreateAulaModal(false);
@@ -70,7 +82,7 @@ function DashboardProfessorView() {
       await CreateAula({
         arquivoExercicio: exerciseUrl,
         arquivoMateria: materiaUrl,
-        dataAula: dayjs(classDate, "YYYY-MM-DD"),
+        dataAula: "29/10/22",
         descricao: description,
         nome: className,
         urlVideo: videoUrl
@@ -121,7 +133,28 @@ function DashboardProfessorView() {
                       </TableCell>
                     </TableRow>
                   </TableHead>
-                  <TableBody></TableBody>
+                  <TableBody>
+
+                  {aulas.map((aula, index) => {
+                    console.log("🚀 ~ file: index.jsx ~ line 139 ~ {aulas.map ~ user", aula)
+                    
+                      // return (
+                      //   <TableRow key={index}>
+                      //     <TableCell align="left">{user.nome}</TableCell>
+                      //     <TableCell align="left">{user.email}</TableCell>
+                      //     <TableCell align="left">{user.matricula}</TableCell>
+                      //     <TableCell align="right">
+                      //       <IconButton aria-label="delete">
+                      //         <EditIcon />
+                      //       </IconButton>
+                      //       <IconButton aria-label="update">
+                      //         <DeleteIcon />
+                      //       </IconButton>
+                      //     </TableCell>
+                      //   </TableRow>
+                      // );
+                    })}
+                  </TableBody>
                 </Table>
               </TableContainer>
             </Grid>

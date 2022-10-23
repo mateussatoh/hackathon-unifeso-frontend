@@ -71,6 +71,11 @@ function DashboardAlunoView() {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
           malesuada lacus ex, sit amet blandit leo lobortis eget.
         </Typography>
+        <br/>
+        <Link href="#">Link da Apostila</Link>
+        <br/>
+        <Link href="#">Link dos Exercicios</Link>
+
       </AccordionDetails>
     </Accordion>
     <Accordion>
