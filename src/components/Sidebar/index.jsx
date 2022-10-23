@@ -17,22 +17,27 @@ import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 import { ListAllTurmas } from "../../service/turma";
 
 function Sidebar() {
-  const [turmas, setTurmas] = useState(false) 
+  const [turmas, setTurmas] = useState([]) 
   useEffect(() => {
     async function fetch() {
       const turmas = await ListAllTurmas()
       console.log("🚀 ~ file: index.jsx ~ line 24 ~ fetch ~ turmas", turmas)
-      setTurmas(turmas)
+      setTurmas(turmas.content)
     }
+
+    fetch()
   }, []);
   return (
     <List component="nav">
+      
+      {turmas.map((turma) => 
       <ListItemButton>
         <ListItemIcon>
-          <CalculateIcon />
+          <BookIcon />
         </ListItemIcon>
-        <ListItemText primary="Matemática" />
+        <ListItemText primary={turma.nome} />
       </ListItemButton>
+      )}
     </List>
   );
 }

@@ -32,19 +32,23 @@ function Copyright(props) {
 }
 
 function Form({ type }) {
-  const handleSubmit = (event) => {
+
+  const [email,setEmail] = useState()
+  const [senha,setSenha] = useState()
+
+
+  const onSubmit = (event) => {
+    
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
+    }
+  
+
+
 
   switch (type) {
     case "LOGIN":
       return (<>
-        <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+        <Box component="form" noValidate  sx={{ mt: 1 }}>
           <TextField
             margin="normal"
             required
@@ -54,6 +58,7 @@ function Form({ type }) {
             name="email"
             autoComplete="email"
             autoFocus
+            onChange={(e) => {setEmail(e.target.value)}}
           />
           <TextField
             margin="normal"
@@ -64,6 +69,8 @@ function Form({ type }) {
             type="password"
             id="password"
             autoComplete="current-password"
+            onChange={(e) => {setPassword(e.target.value)}}
+
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
@@ -74,7 +81,7 @@ function Form({ type }) {
             fullWidth
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
-            href="/dashboard"
+            onClick={(e)=> {onSubmit(e)}}
           >
             Entrar
           </Button>
