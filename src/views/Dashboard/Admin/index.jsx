@@ -245,7 +245,7 @@ function DashboardAdminView() {
                     </TableRow>
                   </TableHead>
                   <TableBody>
-                  {turmas && turmas.map((turmas, index) => {
+                  {!turmas && turmas.map((turmas, index) => {
                     console.log(turmas)
                   }
                       )
