@@ -12,6 +12,8 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Link from '@mui/material/Link';
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { useEffect } from 'react';
+import { ListAllUsers } from '../../../service/user';
 
 function Copyright(props) {
     return (
@@ -28,6 +30,8 @@ function Copyright(props) {
   
 
 function DashboardAlunoView() {
+
+
     return(
         <Box
         component="main"
