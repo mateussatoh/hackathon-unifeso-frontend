@@ -16,6 +16,18 @@ import { useEffect } from 'react';
 import { ListAllUsers } from '../../../service/user';
 
 function Copyright(props) {
+// <<<<<<< HEAD
+  return (
+    <Typography variant="body2" color="text.secondary" align="center" {...props}>
+      {'Copyright © '}
+      <Link color="inherit" href="https://mui.com/">
+        Your Website
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
+// =======
     return (
       <Typography variant="body2" color="text.secondary" align="center" {...props}>
         {'Copyright © '}
@@ -105,6 +117,83 @@ function DashboardAlunoView() {
         
       </Box>
 )
+// >>>>>>> 283e911f111ba4f3104137cd4e4cceffb9497613
 }
 
-export {DashboardAlunoView}
+
+function DashboardAlunoView() {
+  return (
+    <Box
+      component="main"
+      sx={{
+        backgroundColor: (theme) =>
+          theme.palette.mode === 'light'
+            ? theme.palette.grey[100]
+            : theme.palette.grey[900],
+        flexGrow: 1,
+        height: '100vh',
+        overflow: 'auto',
+      }}
+    >
+      <Toolbar />
+
+      <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+        <Grid container spacing={1}>
+          <Grid item xs={12} md={12} lg={12}>
+            <Paper
+              sx={{
+                p: 2,
+                display: 'flex',
+                flexDirection: 'column',
+                height: "auto",
+              }}
+            >
+              <Accordion>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
+                >
+                  <Typography>Polinomios - Aula 22/10/2022</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography sx={{
+                    display: "flex",
+                    justifyContent: "center"
+                  }}>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/727OCYIFbNw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+              <Accordion>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel2a-content"
+                  id="panel2a-header"
+                >
+                  <Typography>Polinomios - Aula 29/10/2022</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography sx={{
+                    display: "flex",
+                    justifyContent: "center"
+                  }}>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/RevbMgyMQmg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+
+            </Paper>
+          </Grid>
+
+
+
+        </Grid>
+      </Container>
+
+
+    </Box>
+  )
+}
+
+export { DashboardAlunoView }
