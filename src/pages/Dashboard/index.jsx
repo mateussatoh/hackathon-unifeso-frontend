@@ -6,12 +6,14 @@ import Box from '@mui/material/Box';
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import { Container } from '@mui/material';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
+import { useNavigate, userNavigate } from 'react-router-dom';
 
 
 import Menu from '@mui/material/Menu';
@@ -20,7 +22,9 @@ import { DashboardAlunoView } from "../../views/Dashboard/Aluno"
 import { DashboardAdminView } from "../../views/Dashboard/Admin"
 import { DashboardProfessorView } from "../../views/Dashboard/Professor"
 
-
+// files
+import logo from "../../assets/img/logo.png"
+import logobranco from "../../assets/img/logo-branco.png"
 
 
 
@@ -104,6 +108,12 @@ function Dashboard({view}) {
     }
   }
 
+  let navigate = useNavigate();
+
+  const routerChangeLogin = () => {
+    navigate(`/login`);
+  }
+
   return (
     <ThemeProvider theme={mdTheme}>
       <Box sx={{ display: 'flex' }}>
@@ -133,7 +143,16 @@ function Dashboard({view}) {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-             {view === "ADMIN" ? "Área do coordenador" : view === "ALUNO" ? "Área do aluno" : "Área do professor" }
+
+            
+
+             {/* {view === "ADMIN" ? "Área do coordenador" : view === "ALUNO" ? "Área do aluno" : "Área do professor" } */}
+             <Container sx={{
+                display: "flex",
+                justifyContent: "center"
+              }}>
+              <img src={`${logobranco}`} onClick={routerChangeLogin} alt="Logo" width="180" style={{cursor: 'pointer'}} />
+            </Container>
             </Typography>
             <IconButton color="inherit" onClick={(e) => {setUserDrawerOptions(e.currentTarget)}}>
                 <PersonIcon />
@@ -158,6 +177,15 @@ function Dashboard({view}) {
             </IconButton>
           </Toolbar>
           <Divider />
+          <Container
+          sx={{
+            p: "30px 10px 10px",
+            fontSize: 20,
+            textAlign: "center"
+          }}
+          >
+            {open && 'Área do aluno'}
+          </Container>
           <Sidebar />
         </Drawer>
 
